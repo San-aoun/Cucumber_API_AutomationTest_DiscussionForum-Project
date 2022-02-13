@@ -52,6 +52,7 @@
         </nav>
     </header>
     <div class="container">
+        @await Html.PartialAsync("_DiscussionSearch")
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

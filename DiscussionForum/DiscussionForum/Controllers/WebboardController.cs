@@ -68,5 +68,20 @@ namespace DiscussionForum.Controllers
             }
             return View("index",await ds.ToListAsync());
         }
+
+        public async Task<IActionResult> Search(string q)
+        {
+            var ds = _db.Discussions
+                .OrderByDescending(d => d.RecordDate)
+                .Include(c => c.Category)
+                .Where(u => u.IsShow == true)
+                .Where(i => i.DiscussionTopic.Contains(q));
+
+            if (ds == null)
+            {
+                return NotFound();
+            }
+            return View("index", await ds.ToListAsync());
+        }
     }
 }
