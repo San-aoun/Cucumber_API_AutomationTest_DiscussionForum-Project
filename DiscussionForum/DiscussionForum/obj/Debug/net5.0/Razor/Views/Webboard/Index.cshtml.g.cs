@@ -33,8 +33,15 @@ using DiscussionForum.Models.db;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\_ViewImports.cshtml"
+using DiscussionForum.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a05b240504db50e7c2fff4e0a0e7b264587e803", @"/Views/Webboard/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8f4c90a8640b52e4ac0ff8fac513e8c98db7d125", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8e7f1d7af2519cc53014c83f02f6e62382151014", @"/Views/_ViewImports.cshtml")]
     public class Views_Webboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Discussion>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Webboard", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -66,7 +73,7 @@ using DiscussionForum.Models.db;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a05b240504db50e7c2fff4e0a0e7b264587e8034614", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a05b240504db50e7c2fff4e0a0e7b264587e8034805", async() => {
                 WriteLiteral("All Topic");
             }
             );
@@ -142,7 +149,7 @@ using DiscussionForum.Models.db;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                    </td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a05b240504db50e7c2fff4e0a0e7b264587e8038494", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a05b240504db50e7c2fff4e0a0e7b264587e8038685", async() => {
                 WriteLiteral("\r\n                            ");
 #nullable restore
 #line 35 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\Webboard\Index.cshtml"

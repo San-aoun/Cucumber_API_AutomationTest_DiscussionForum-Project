@@ -1,16 +1,61 @@
-﻿
+﻿@model MainIndexViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container border" >
-    <div class="row">
-        <div class="col-md-6">
-            <form >
-                Name : 
-                Address:
-            </form>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 m-2">
+    @foreach (var item in Model.CategoriesLists)
+    {
+        <div class="col">
+            <div class="card border-primary m-1">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a asp-controller="Webboard"
+                           asp-action="KratoosByCategoryId"
+                           asp-route-id="@item.CategoryId">
+                            @item.CategoryName
+                        </a>
+                    </h4>
+                    <p class="card-text">@item.Description</p>
+                </div>
+            </div>
         </div>
-    </div>
-
+    }
+</div>
+<div class="container">
+    <h3>10 Topics</h3>
+    <table class="table table-responsive table-striped">
+        <tbody>
+            @foreach (var item in Model.DiscussionsLists)
+            {
+                <tr>
+                    <td>
+                        <h4>
+                            @item.DiscussionTopic
+                        </h4>
+                        <div>
+                            User create topic : @item.UserName
+                            (User IP : @item.UserIp) |
+                            Date : @item.RecordDate?.ToString("dd/MM/yyyy HH:mm")
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            Read : @item.ViewCount |
+                            Answer : @item.ReplyCount
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a asp-controller="Webboard"
+                               asp-action="DiscussionByCategoryId"
+                               asp-route-id="@item.CategoryId">
+                                @item.Category.CategoryName
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

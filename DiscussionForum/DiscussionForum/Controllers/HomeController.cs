@@ -4,23 +4,31 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using DiscussionForum.Models;
+using DiscussionForum.Models.db;
+using DiscussionForum.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace DiscussionForum.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly discussionForumDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(discussionForumDBContext db)
         {
-            _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var viewmodel = new MainIndexViewModel()
+            {
+                CategoriesLists = _db.Categories,
+                DiscussionsLists = _db.Discussions.OrderByDescending(r => r.RecordDate).Take(10).Include(c => c.Category).Where(i => i.IsShow == true)
+            };
+            return View(viewmodel);
         }
 
         public IActionResult Privacy()
