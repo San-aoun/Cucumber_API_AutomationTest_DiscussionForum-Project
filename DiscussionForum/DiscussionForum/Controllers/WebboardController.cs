@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using DiscussionForum.Models.db;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 
 namespace DiscussionForum.Controllers
 {
@@ -23,6 +25,34 @@ namespace DiscussionForum.Controllers
                 return NotFound();
             }
             return View(await ds.ToListAsync());
+        }
+
+        public IActionResult Create()
+        {
+            ViewData["CategoriesLists"] = new SelectList(_db.Categories, "CategoryId", "CategoryName");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Discussion data)
+        {
+            if (ModelState.IsValid)
+            {
+                data.RecordDate = DateTime.Now;
+                data.ViewCount = 1;
+                data.ReplyCount = 0;
+                data.UserIp = HttpContext.Connection.RemoteIpAddress.ToString();
+                data.IsShow = true;
+
+                _db.Discussions.Add(data);
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["CategoriesLists"] = new SelectList(_db.Categories, "CategoryId", "CategoryName");
+
+            return View(data);
         }
     }
 }
