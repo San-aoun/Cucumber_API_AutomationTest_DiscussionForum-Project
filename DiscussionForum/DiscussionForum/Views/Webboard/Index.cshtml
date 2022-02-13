@@ -6,6 +6,9 @@
 }
 
 <div class="container">
+    <div>
+        <a asp-controller="Webboard" asp-action="Index" class="float-right">All Topic</a>
+    </div>
     <table class="table table-responsive table-striped">
         <tbody>
             @foreach (var item in Model)
@@ -26,7 +29,11 @@
                         </div>
                     </td>
                     <td>
-                        @item.Category.CategoryName
+                        <a asp-controller="Webboard" 
+                           asp-action="DiscussionByCategoryId"
+                           asp-route-id="@item.Category.CategoryId">
+                            @item.Category.CategoryName
+                        </a>
                     </td>
                 </tr>
             }
