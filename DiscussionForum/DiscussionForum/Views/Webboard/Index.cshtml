@@ -1,5 +1,37 @@
-﻿@*
+﻿@model IEnumerable<Discussion> 
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+
+<div class="container">
+    <table class="table table-responsive table-striped">
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <h4>@item.DiscussionTopic</h4>
+                        <div>
+                            Create name : @item.UserName
+                            (IP : @item.UserIp) | 
+                            Create date : @item.RecordDate?.ToString("dd/MM/yyyy HH:mm");
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            Read : @item.ViewCount |
+                            Answer : @item.ReplyCount
+                        </div>
+                    </td>
+                    <td>
+                        @item.Category.CategoryName
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>

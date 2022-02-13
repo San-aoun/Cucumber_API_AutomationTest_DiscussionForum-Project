@@ -26,8 +26,15 @@ using DiscussionForum.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\_ViewImports.cshtml"
+using DiscussionForum.Models.db;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ba4ee070ef5c9784ec6f1c3d7d1b6436d71679ba", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5df399c25bacab6c4e8fa9bf003e38de5d89b6f0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8f4c90a8640b52e4ac0ff8fac513e8c98db7d125", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -65,7 +72,7 @@ using DiscussionForum.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"container border\" >\r\n    <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba4ee070ef5c9784ec6f1c3d7d1b6436d71679ba3556", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba4ee070ef5c9784ec6f1c3d7d1b6436d71679ba3747", async() => {
                 WriteLiteral("\r\n                Name : \r\n                Address:\r\n            ");
             }
             );
