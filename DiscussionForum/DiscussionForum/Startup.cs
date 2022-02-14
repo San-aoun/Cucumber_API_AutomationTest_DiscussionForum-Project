@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DiscussionForum.Models.db;
+using DiscussionForum.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,8 @@ namespace DiscussionForum
             services.AddControllersWithViews();
             services.AddDbContext<discussionForumDBContext>(option => option.UseSqlServer(
                 Configuration.GetConnectionString("discussionForumDB")));
+
+            services.AddTransient<CommentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

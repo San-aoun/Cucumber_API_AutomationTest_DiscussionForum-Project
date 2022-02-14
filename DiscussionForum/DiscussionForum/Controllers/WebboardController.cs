@@ -124,14 +124,8 @@ namespace DiscussionForum.Controllers
                 }
             }
 
-            IQueryable<Comment> cs = _db.Comments
-                .OrderBy(c=>c.CommenNo)
-                .Where(i => i.IsShow==true)
-                .Where(j => j.Did==id);
-
             var veiwModel = new TopicCommentVeiwModel()
             {
-                CommentsLists = cs,
                 Discussion = dc
             };
 
