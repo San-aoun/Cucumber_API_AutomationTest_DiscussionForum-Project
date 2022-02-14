@@ -55,6 +55,7 @@ namespace DiscussionForum.Controllers
 
             return View(data);
         }
+
         public async Task<IActionResult> DiscussionByCategoryId(int id)
         {
             var ds = _db.Discussions
@@ -84,6 +85,7 @@ namespace DiscussionForum.Controllers
             }
             return View("index", await ds.ToListAsync());
         }
+
         public async Task<IActionResult> TopicComment(int id)
         {
             var dc = _db.Discussions
@@ -133,9 +135,9 @@ namespace DiscussionForum.Controllers
                 Discussion = dc
             };
 
-            ViewData["TopicCommentVeiwModel"]   = veiwModel;   
+            ViewData["TopicCommentVeiwModel"] = veiwModel;   
 
-            return View(veiwModel);
+            return View();
         }
     }
 }

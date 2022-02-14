@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8310bffa-4884-42ed-ad18-6a03b1e4606b": {
+      "ProjectGuid": "8310bffa-4884-42ed-ad18-6a03b1e4606b",
+      "DisplayName": "DiscussionForum",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

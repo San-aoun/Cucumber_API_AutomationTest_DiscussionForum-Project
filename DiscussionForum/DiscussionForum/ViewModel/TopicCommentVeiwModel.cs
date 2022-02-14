@@ -8,7 +8,8 @@ namespace DiscussionForum.ViewModel
 {
     public class TopicCommentVeiwModel
     {
-        public Discussion Discussion { get; set; }
         public IQueryable<Comment> CommentsLists { get; set; }
+        public Discussion Discussion { get; set; }
+        
     }
 }

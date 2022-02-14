@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kFluX9eIbLaVuCzAhqwO6LC5A3AE0opRReEAL2Smns6RuLlPlA9q++6iY28di22nIJ0WWPCJz3u9vGv2eOi8Hw==",
+  "dgSpecHash": "LoK9LXXl1azFHJNzMvsysNQhKGttjouPGZZ2HSDO2813/GI5pHqTVOixjp8bB6sTYYN/UN5DdcT7mVc8+4dtFQ==",
   "success": true,
   "projectFilePath": "E:\\DiscussionForum\\DiscussionForum\\DiscussionForum\\DiscussionForum.csproj",
   "expectedPackageFiles": [
@@ -100,7 +100,8 @@
     "C:\\Users\\piyathida.s\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\piyathida.s\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\piyathida.s\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\piyathida.s\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\piyathida.s\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\piyathida.s\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
   ],
   "logs": []
 }
