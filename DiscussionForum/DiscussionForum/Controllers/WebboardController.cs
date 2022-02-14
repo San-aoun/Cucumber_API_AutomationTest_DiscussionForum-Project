@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using DiscussionForum.ViewModel;
 
 namespace DiscussionForum.Controllers
 {
@@ -82,6 +83,57 @@ namespace DiscussionForum.Controllers
                 return NotFound();
             }
             return View("index", await ds.ToListAsync());
+        }
+        public async Task<IActionResult> TopicComment(int id)
+        {
+            var dc = _db.Discussions
+                .Include(c => c.Category)
+                .Where(i => i.IsShow == true)
+                .FirstOrDefault(k => k.Did == id);
+
+            if (dc == null)
+            {
+                return NotFound();
+            }
+            if (id != dc.Did)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var viewcount = dc.ViewCount;
+                    viewcount++;
+
+                    dc.ViewCount = viewcount;
+                    _db.Update(dc);
+                    await _db.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+
+                    var result = _db.Discussions.Any( d => d.Did == id);
+                    if (result==false)
+                    {
+                        return NotFound();
+                    }
+
+                }
+            }
+
+            IQueryable<Comment> cs = _db.Comments
+                .OrderBy(c=>c.CommenNo)
+                .Where(i => i.IsShow==true)
+                .Where(j => j.Did==id);
+
+            var veiwModel = new TopicCommentVeiwModel()
+            {
+                CommentsLists = cs,
+                Discussion = dc
+            };
+
+            return View(veiwModel);
         }
     }
 }

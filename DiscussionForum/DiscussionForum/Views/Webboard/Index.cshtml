@@ -15,7 +15,13 @@
             {
                 <tr>
                     <td>
-                        <h4>@item.DiscussionTopic</h4>
+                        <h4>
+                            <a asp-controller="Webboard"
+                               asp-action="TopicComment"
+                               asp-route="@item.Did">
+                                @item.DiscussionTopic
+                            </a>
+                        </h4>
                         <div>
                             Create name : @item.UserName
                             (IP : @item.UserIp) | 
