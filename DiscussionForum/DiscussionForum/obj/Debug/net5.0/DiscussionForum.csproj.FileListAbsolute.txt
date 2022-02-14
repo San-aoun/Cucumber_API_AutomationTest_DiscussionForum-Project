@@ -9,7 +9,6 @@ E:\DiscussionForum\DiscussionForum\DiscussionForum\bin\Debug\net5.0\ref\Discussi
 E:\DiscussionForum\DiscussionForum\DiscussionForum\bin\Debug\net5.0\DiscussionForum.pdb
 E:\DiscussionForum\DiscussionForum\DiscussionForum\bin\Debug\net5.0\DiscussionForum.Views.dll
 E:\DiscussionForum\DiscussionForum\DiscussionForum\bin\Debug\net5.0\DiscussionForum.Views.pdb
-E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.csproj.AssemblyReference.cache
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.GeneratedMSBuildEditorConfig.editorconfig
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.AssemblyInfoInputs.cache
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.AssemblyInfo.cs

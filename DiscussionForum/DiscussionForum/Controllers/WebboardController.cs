@@ -139,5 +139,49 @@ namespace DiscussionForum.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> TopicComment(Comment data)
+        {
+            if (ModelState.IsValid)
+            {
+                var cs = await _db.Comments
+                    .OrderByDescending(i => i.CommenNo)
+                    .Where(c => c.Did == data.Did)
+                    .FirstOrDefaultAsync();
+
+                int currentNo;
+                if (cs != null)
+                {
+                    currentNo = cs.CommenNo;
+                    currentNo++;
+                }
+                else
+                {
+                    currentNo = 1;
+                }
+
+                data.CommenNo = currentNo;
+                data.ReplyDate = DateTime.Now;  
+                data.UserIp = HttpContext.Connection.RemoteIpAddress.ToString();
+                data.IsShow = true;
+                _db.Add(data);
+
+                var ds = await _db.Discussions.Where(d => d.Did == data.Did).FirstOrDefaultAsync();
+                var replycount = ds.ReplyCount;
+                replycount++;
+                ds.ReplyCount = replycount; 
+                _db.Update(ds); 
+
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(data);
+
+
+        }
     }
 }

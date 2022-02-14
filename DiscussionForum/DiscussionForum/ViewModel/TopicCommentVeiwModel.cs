@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DiscussionForum.Models.db;
 using System.Linq;
-using System.Threading.Tasks;
-using DiscussionForum.Models.db;
 
 namespace DiscussionForum.ViewModel
 {
