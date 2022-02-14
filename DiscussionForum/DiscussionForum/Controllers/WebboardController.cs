@@ -172,7 +172,7 @@ namespace DiscussionForum.Controllers
                 var replycount = ds.ReplyCount;
                 replycount++;
                 ds.ReplyCount = replycount; 
-                _db.Update(ds); 
+                _db.Update(ds);
 
                 await _db.SaveChangesAsync();
 
