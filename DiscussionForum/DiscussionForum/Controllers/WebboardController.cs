@@ -133,6 +133,8 @@ namespace DiscussionForum.Controllers
                 Discussion = dc
             };
 
+            ViewData["TopicCommentVeiwModel"]   = veiwModel;   
+
             return View(veiwModel);
         }
     }
