@@ -27,7 +27,7 @@ namespace DiscussionForum
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<discussionForumDBContext>(option => option.UseSqlServer(
+            services.AddDbContext<DiscussionForumDBContext>(option => option.UseSqlServer(
                 Configuration.GetConnectionString("discussionForumDB")));
 
             services.AddTransient<CommentService>();

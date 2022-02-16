@@ -72,3 +72,4 @@ E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Webboard\Create.cshtml.g.cs
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Shared\_DiscussionSearch.cshtml.g.cs
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Webboard\TopicComment.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.csproj.AssemblyReference.cache

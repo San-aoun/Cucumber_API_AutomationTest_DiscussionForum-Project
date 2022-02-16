@@ -14,9 +14,9 @@ namespace DiscussionForum.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly discussionForumDBContext _db;
+        private readonly DiscussionForumDBContext _db;
 
-        public HomeController(discussionForumDBContext db)
+        public HomeController(DiscussionForumDBContext db)
         {
             _db = db;
         }

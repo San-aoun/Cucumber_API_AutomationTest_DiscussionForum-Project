@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DiscussionForum.Models.db
 {
-    public partial class discussionForumDBContext : DbContext
+    public partial class DiscussionForumDBContext : DbContext
     {
-        public discussionForumDBContext()
+        public DiscussionForumDBContext()
         {
         }
 
-        public discussionForumDBContext(DbContextOptions<discussionForumDBContext> options)
+        public DiscussionForumDBContext(DbContextOptions<DiscussionForumDBContext> options)
             : base(options)
         {
         }
