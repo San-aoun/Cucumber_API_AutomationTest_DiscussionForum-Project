@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace DiscussionForum.Models
 {
-    public class ApplicationUser
+    public class ApplicationUser :IdentityUser
     {
         public string Fullname { get; set; }
         public string Address { get; set; }
