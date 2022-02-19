@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 #nullable disable
 
@@ -33,6 +34,10 @@ namespace DiscussionForum.Models.db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new { Id = Guid.NewGuid().ToString(), Name = "Admin", NormalizedName = "ADMIN"},
+                new { Id = Guid.NewGuid().ToString(), Name = "Member", NormalizedName = "MEMBER"});
 
             modelBuilder.Entity<Category>(entity =>
             {
