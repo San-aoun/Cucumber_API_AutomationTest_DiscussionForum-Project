@@ -42,7 +42,9 @@ using DiscussionForum.ViewModel;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa4ae627c0b98ee738f01dccfe03621d7fb23b17", @"/Views/Webboard/Index.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8e7f1d7af2519cc53014c83f02f6e62382151014", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_Webboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Discussion>>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Webboard", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -74,7 +76,7 @@ using DiscussionForum.ViewModel;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa4ae627c0b98ee738f01dccfe03621d7fb23b175112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa4ae627c0b98ee738f01dccfe03621d7fb23b175158", async() => {
                 WriteLiteral("All Topic");
             }
             );
@@ -102,7 +104,7 @@ using DiscussionForum.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("                <tr>\r\n                    <td>\r\n                        <h4>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa4ae627c0b98ee738f01dccfe03621d7fb23b177014", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa4ae627c0b98ee738f01dccfe03621d7fb23b177060", async() => {
                 WriteLiteral("\r\n                                ");
 #nullable restore
 #line 22 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\Webboard\Index.cshtml"
@@ -183,7 +185,7 @@ using DiscussionForum.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                    </td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa4ae627c0b98ee738f01dccfe03621d7fb23b1711467", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa4ae627c0b98ee738f01dccfe03621d7fb23b1711513", async() => {
                 WriteLiteral("\r\n                            ");
 #nullable restore
 #line 41 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\Webboard\Index.cshtml"
@@ -234,16 +236,26 @@ using DiscussionForum.ViewModel;
             WriteLiteral("\r\n        </tbody>\r\n\r\n    </table>\r\n</div>");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<Discussion>> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<Discussion>> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591

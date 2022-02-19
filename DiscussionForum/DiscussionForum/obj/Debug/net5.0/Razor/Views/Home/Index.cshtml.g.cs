@@ -42,7 +42,9 @@ using DiscussionForum.ViewModel;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2240016f06f05c468dba635fa014c1219cf7343a", @"/Views/Home/Index.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8e7f1d7af2519cc53014c83f02f6e62382151014", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MainIndexViewModel>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Webboard", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "KratoosByCategoryId", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -90,7 +92,7 @@ using DiscussionForum.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("        <div class=\"col\">\r\n            <div class=\"card border-primary m-1\">\r\n                <div class=\"card-body\">\r\n                    <h4 class=\"card-title\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2240016f06f05c468dba635fa014c1219cf7343a5410", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2240016f06f05c468dba635fa014c1219cf7343a5456", async() => {
                 WriteLiteral("\r\n                            ");
 #nullable restore
 #line 16 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\Home\Index.cshtml"
@@ -156,7 +158,7 @@ using DiscussionForum.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("                <tr>\r\n                    <td>\r\n                        <h4>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2240016f06f05c468dba635fa014c1219cf7343a9161", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2240016f06f05c468dba635fa014c1219cf7343a9207", async() => {
                 WriteLiteral("\r\n                                ");
 #nullable restore
 #line 37 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\Home\Index.cshtml"
@@ -237,7 +239,7 @@ using DiscussionForum.ViewModel;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                    </td>\r\n                    <td>\r\n                        <div>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2240016f06f05c468dba635fa014c1219cf7343a13661", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2240016f06f05c468dba635fa014c1219cf7343a13707", async() => {
                 WriteLiteral("\r\n                                ");
 #nullable restore
 #line 58 "E:\DiscussionForum\DiscussionForum\DiscussionForum\Views\Home\Index.cshtml"
@@ -288,16 +290,26 @@ using DiscussionForum.ViewModel;
             WriteLiteral("        </tbody>\r\n    </table>\r\n</div>\r\n");
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<MainIndexViewModel> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<MainIndexViewModel> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591
