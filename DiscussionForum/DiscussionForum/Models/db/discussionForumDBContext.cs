@@ -1,15 +1,16 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 #nullable disable
 
 namespace DiscussionForum.Models.db
 {
-    public partial class DiscussionForumDBContext : DbContext
+    public partial class DiscussionForumDBContext : IdentityDbContext<ApplicationUser>
     {
         public DiscussionForumDBContext()
         {
+
         }
 
         public DiscussionForumDBContext(DbContextOptions<DiscussionForumDBContext> options)
