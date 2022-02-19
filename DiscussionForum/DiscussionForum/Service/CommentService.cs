@@ -8,9 +8,9 @@ namespace DiscussionForum.Service
 {
     public class CommentService
     {
-        private readonly DiscussionForumDBContext _db;
+        private readonly discussionForumDBContext _db;
 
-        public CommentService(DiscussionForumDBContext db)
+        public CommentService(discussionForumDBContext db)
         {
             _db = db;
         }

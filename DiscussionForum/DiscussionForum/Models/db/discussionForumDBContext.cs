@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DiscussionForum.Models.db
 {
-    public partial class DiscussionForumDBContext : IdentityDbContext<ApplicationUser>
+    public partial class discussionForumDBContext : IdentityDbContext<ApplicationUser>
     {
-        public DiscussionForumDBContext()
+        public discussionForumDBContext()
         {
 
         }
 
-        public DiscussionForumDBContext(DbContextOptions<DiscussionForumDBContext> options)
+        public discussionForumDBContext(DbContextOptions<discussionForumDBContext> options)
             : base(options)
         {
         }
@@ -32,7 +32,7 @@ namespace DiscussionForum.Models.db
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Category>(entity =>
             {

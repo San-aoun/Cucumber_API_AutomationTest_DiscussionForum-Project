@@ -11,9 +11,9 @@ namespace DiscussionForum.Controllers
 {
     public class WebboardController : Controller
     {
-        private readonly DiscussionForumDBContext _db;
+        private readonly discussionForumDBContext _db;
 
-        public WebboardController(DiscussionForumDBContext db)
+        public WebboardController(discussionForumDBContext db)
         {
             _db = db;
         }

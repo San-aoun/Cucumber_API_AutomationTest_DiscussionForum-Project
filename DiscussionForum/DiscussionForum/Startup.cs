@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DiscussionForum.Models;
 using DiscussionForum.Models.db;
 using DiscussionForum.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,8 +29,10 @@ namespace DiscussionForum
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<DiscussionForumDBContext>(option => option.UseSqlServer(
-                Configuration.GetConnectionString("discussionForumDB")));
+            services.AddDbContext<discussionForumDBContext>(option => option.UseSqlServer(Configuration.GetConnectionString("discussionForumDB")));
+            services.AddIdentity<ApplicationUser,IdentityRole>()
+                .AddEntityFrameworkStores<discussionForumDBContext>()
+                .AddDefaultTokenProviders();    
 
             services.AddTransient<CommentService>();
         }
@@ -51,6 +55,7 @@ namespace DiscussionForum
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
