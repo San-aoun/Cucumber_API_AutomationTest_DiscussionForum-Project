@@ -49,7 +49,7 @@ namespace DiscussionForum.Controllers
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("Index","Member");
                 }
                 else
                 {

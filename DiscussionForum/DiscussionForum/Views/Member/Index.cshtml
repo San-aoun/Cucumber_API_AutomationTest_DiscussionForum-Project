@@ -1,7 +1,48 @@
-﻿
-<div>
+﻿@model DiscussionForum.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Member Details";
+}
+<div class="container">
     <h1> Page Member!!! </h1>
-    <form asp-controller="Account" asp-action="Logout">
-        <button type="submit">Logout</button>
-    </form>
+    <div class="card"> 
+        <div class="card-header text-light bg-dark">
+            <h3>ID : @Model.Id</h3>
+        </div>
+        <div class="card-body">
+            @if (string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="~/images/nopic.png"/>
+            }
+            else
+            {
+                <img src="@Model.ImageUrl"/>
+            }
+
+            <h5 class="card-title">UserName : @Model.UserName</h5>
+            <h5 class="card-title">Email : @Model.Email</h5>
+            <p class="card-text">
+                <b>Fullname :</b>@Model.Fullname<br />
+                <b>Address : </b>@Model.Address <br />
+                <b>TelephoneNo. : </b> @Model.PhoneNumber<br />
+                <b>Date of Birth : </b>@Model.BirthDate.ToString("d MMMM yyyy")
+            </p>
+        </div>
+        <div class="card-footer">
+            <nav class="navbar navbar-light bg-light text-dark">
+                <div class="container-fluid">
+                    <a asp-controller="Member"
+                       asp-action="Edit"
+                       asp-route-id="@Model.Id"
+                       class="btn btn-link text-dark">
+                        แก้ไข
+                    </a>
+
+                    <form asp-controller="Account" asp-action="Logout" class="d-flex">
+                        <button type="submit" class="btn btn-link text-dark">Logout</button>
+                    </form>
+                </div>
+
+        </div>
+    </div>
 </div>
+

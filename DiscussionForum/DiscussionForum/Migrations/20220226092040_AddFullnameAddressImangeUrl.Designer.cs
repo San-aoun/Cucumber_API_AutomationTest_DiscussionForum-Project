@@ -4,14 +4,16 @@ using DiscussionForum.Models.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DiscussionForum.Migrations
 {
     [DbContext(typeof(discussionForumDBContext))]
-    partial class discussionForumDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220226092040_AddFullnameAddressImangeUrl")]
+    partial class AddFullnameAddressImangeUrl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

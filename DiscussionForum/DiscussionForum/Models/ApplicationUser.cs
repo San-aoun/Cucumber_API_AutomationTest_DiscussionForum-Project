@@ -8,6 +8,7 @@ namespace DiscussionForum.Models
         public string Fullname { get; set; }
         public string Address { get; set; }
         public DateTime BirthDate { get; set; }
+        public string ImageUrl { get; set; }
 
     }
 }
