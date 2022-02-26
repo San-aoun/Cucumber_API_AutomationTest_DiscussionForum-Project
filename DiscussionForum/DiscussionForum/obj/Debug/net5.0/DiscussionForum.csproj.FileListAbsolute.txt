@@ -81,3 +81,4 @@ E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\refint\Discu
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.pdb
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.genruntimeconfig.cache
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\ref\DiscussionForum.dll
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Member\Edit.cshtml.g.cs

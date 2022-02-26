@@ -11,11 +11,15 @@
         <div class="card-body">
             @if (string.IsNullOrEmpty(Model.ImageUrl))
             {
-                <img src="~/images/nopic.png"/>
+                <img class="img"
+                     src="@Url.Content("~/wwwroot/images/" + "nopic.png")"
+                     width="140" height="180" />
             }
             else
             {
-                <img src="@Model.ImageUrl"/>
+                <img class="img"
+                     src="@Url.Content("~/wwwroot/images/" + @Model.ImageUrl)"
+                     width="140" height="180" />
             }
 
             <h5 class="card-title">UserName : @Model.UserName</h5>

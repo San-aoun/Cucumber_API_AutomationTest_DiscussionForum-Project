@@ -5950,7 +5950,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.2"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.2",
+      "System.Collections >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -6023,6 +6024,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "System.Collections": {
+            "target": "Package",
+            "version": "[4.3.0, )"
           }
         },
         "imports": [
