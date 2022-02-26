@@ -79,3 +79,5 @@ E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\refint\Discu
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.pdb
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.genruntimeconfig.cache
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\ref\DiscussionForum.dll
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Member\Index.cshtml.g.cs

@@ -12,7 +12,7 @@ namespace DiscussionForum.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, 
+        public AccountController(UserManager<ApplicationUser> userManager,
                                 RoleManager<IdentityRole> roleManager,
                                 SignInManager<ApplicationUser> signInManager)
         {
@@ -33,8 +33,8 @@ namespace DiscussionForum.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser();
-                user.Email = data.Email;
                 user.UserName = data.Email;
+                user.Email = data.Email;
 
                 var result = await _userManager.CreateAsync(user, data.Password);
                 if (result.Succeeded)
@@ -42,25 +42,60 @@ namespace DiscussionForum.Controllers
                     if (!await _roleManager.RoleExistsAsync("Member"))
                     {
                         var role = new IdentityRole("Member");
-                        var roleresults = await _roleManager.CreateAsync(role);
-
-                        await _userManager.AddToRoleAsync(user, "Member"); 
-                    }                                 
-                    else
-                    {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        var roleresult = await _roleManager.CreateAsync(role);
                     }
+
+                    await _userManager.AddToRoleAsync(user, "Member");
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
                     return RedirectToAction(nameof(Index));
-                }            
+                }
                 else
                 {
-                    foreach ( var item in result.Errors)
+                    foreach (var item in result.Errors)
                     {
                         ModelState.AddModelError("", item.Description);
                     }
-                }       
+                }
             }
+
+            return View("Index", data);
+        }
+
+        public IActionResult Login()
+        {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVeiwModel data)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(data.Email, data.Password, isPersistent: false, lockoutOnFailure: false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Member");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Login failed");
+                }
+
+                return RedirectToAction(nameof(Index)); 
+            }
+            return View(data);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        { 
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

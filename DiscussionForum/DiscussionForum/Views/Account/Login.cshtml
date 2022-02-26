@@ -1,0 +1,38 @@
+﻿@model DiscussionForum.ViewModel.LoginVeiwModel;
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="alert alert-primary"> Login</h1>
+
+<di class="container">
+    <div class="col-md-3">
+        <form asp-controller="Account" asp-action="Login">
+            <div class="text-danger" asp-validation-summary="All"></div>
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control"/>
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control"/>
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Login</button>
+                <button type="button" asp-action="Index"
+                        class="btn btn-danger">
+                    Cancel
+                </button>
+            </div>
+
+        </form>
+    </div>
+    <div>
+        haven't registered yet, Please register website.<a asp-controller="Account" asp-action="Index">Click here</a>
+    </div>
+</di>

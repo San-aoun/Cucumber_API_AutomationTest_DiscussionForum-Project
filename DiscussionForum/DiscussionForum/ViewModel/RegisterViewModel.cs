@@ -8,15 +8,17 @@ namespace DiscussionForum.ViewModel
         [Display(Name ="E-mail: ")]
         public string Email { get; set; } 
         
-        [Required(ErrorMessage ="PLease, Create Password")]
+        [Required(ErrorMessage ="Please, Create Password")]
         [Display(Name = "Password: ")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "PLease, Confirm Password")]
+        [Required(ErrorMessage = "Please, Confirm Password")]
         [Display(Name = "Confirm password: ")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage ="Wrong password")]
-        public int PasswordAgain { get; set; }
+        public string PasswordAgain { get; set; }
+
+
     }
 }
