@@ -20,50 +20,63 @@
                 </button>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-area=""
-                               asp-controller="Webboard"
-                               asp-action="Index">WebBoard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area=""
-                               asp-controller="Webboard" asp-action="Create">
-                                Create New Topic
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" 
-                               asp-area="" 
-                               asp-controller="Account" 
-                               asp-action="Index">Register
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" 
-                               asp-area="" 
-                               asp-controller="Account" 
-                               asp-action="Login">Login
-                            </a>
-                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <div class="nav-link text-dark">User : @User.Identity.Name</div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark"asp-area=""asp-controller="Home"asp-action="Index">Home</a>
+                            </li>
+                           <li class="nav-item">
+                                <a class="nav-link text-dark"asp-area=""asp-controller="Webboard"asp-action="Index">WebBoard</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area=""asp-controller="Webboard" asp-action="Create">Create New Topic</a>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" class="form-inline">
+                                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                </form>
+                            </li>
+
+@*                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" 
+                                       asp-area="" 
+                                       asp-controller="Admin" 
+                                       asp-action="Index">Admin
+                                    </a>
+                                </li>
+                            }*@
+                        }
+                        else
+                        {
+                             <li class="nav-item">
+                                <a class="nav-link text-dark" 
+                                   asp-area="" 
+                                   asp-controller="Account" 
+                                   asp-action="Index">Register
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" 
+                                   asp-area="" 
+                                   asp-controller="Account" 
+                                   asp-action="Login">Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" 
+                                    asp-area="" 
+                                    asp-controller="Admin" 
+                                    asp-action="Index">Admin
+                                </a>
+                            </li>
+                        }
+                        
                     </ul>
                 </div>
             </div>

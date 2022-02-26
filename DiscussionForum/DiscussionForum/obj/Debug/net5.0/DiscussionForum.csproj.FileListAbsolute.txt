@@ -82,3 +82,7 @@ E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionFo
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\DiscussionForum.genruntimeconfig.cache
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\ref\DiscussionForum.dll
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Member\Edit.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\Create.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\AddRoleToUser.cshtml.g.cs

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DiscussionForum.Controllers
 {
-    [Authorize(Roles ="Member")]
+    [Authorize(Roles ="Member,Admin")]
     public class MemberController : Controller
     {
         public discussionForumDBContext _discussionForumDBContext { get; }

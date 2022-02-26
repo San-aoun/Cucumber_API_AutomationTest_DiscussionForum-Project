@@ -39,13 +39,13 @@ namespace DiscussionForum.Controllers
                 var result = await _userManager.CreateAsync(user, data.Password);
                 if (result.Succeeded)
                 {
-                    if (!await _roleManager.RoleExistsAsync("Member"))
+                    if (!await _roleManager.RoleExistsAsync("Admin"))
                     {
-                        var role = new IdentityRole("Member");
+                        var role = new IdentityRole("Admin");
                         var roleresult = await _roleManager.CreateAsync(role);
                     }
 
-                    await _userManager.AddToRoleAsync(user, "Member");
+                    await _userManager.AddToRoleAsync(user, "Admin");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
@@ -96,6 +96,11 @@ namespace DiscussionForum.Controllers
             await _signInManager.SignOutAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }
