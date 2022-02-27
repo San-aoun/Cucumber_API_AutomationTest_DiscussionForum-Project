@@ -86,3 +86,6 @@ E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\Create.cshtml.g.cs
 E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\AddRoleToUser.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Role\Index.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+E:\DiscussionForum\DiscussionForum\DiscussionForum\obj\Debug\net5.0\Razor\Views\Admin\RemoveRoleFromUser.cshtml.g.cs

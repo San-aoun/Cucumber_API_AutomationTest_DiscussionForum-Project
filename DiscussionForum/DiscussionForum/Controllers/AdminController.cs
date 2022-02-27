@@ -84,7 +84,7 @@ namespace DiscussionForum.Controllers
         public IActionResult AddRoleToUser(string id)
         {
             ApplicationUser user =  _userManager.FindByIdAsync(id).Result;
-            var viewModel = new AddRoleToUserViewModelcs
+            var viewModel = new AddRoleToUserViewModel
             {
                 UserId = user.Id,
                 Email = user.Email,
@@ -97,6 +97,72 @@ namespace DiscussionForum.Controllers
         private SelectList GetAllRole()
         {
             return new SelectList(_roleManager.Roles.OrderBy(u => u.Name));
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> AddRoleToUser(AddRoleToUserViewModel data)
+        {
+            ApplicationUser user = _userManager.FindByIdAsync(data.UserId).Result;
+
+            if (ModelState.IsValid)
+            {
+                if (!await _userManager.IsInRoleAsync(user, data.NewRole))
+                {
+                    var result = await _userManager.AddToRoleAsync(user, data.NewRole);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
+                    }
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return View(data);
+        }
+        public async Task<IActionResult> RemoveRoleFromUser(string id)
+        {
+            ApplicationUser user = _userManager.FindByIdAsync(id).Result;
+            var userRole = string.Join(",", await _userManager.GetRolesAsync(user));
+
+            var viewModel = new RemoveRoleFromUserViewModel
+            {
+                UserId = user.Id,
+                Email = user.Email,
+                Roles = userRole
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveRoleFromUser(RemoveRoleFromUserViewModel data)
+        { 
+            ApplicationUser user = _userManager.FindByIdAsync(data.UserId).Result;
+            var roles = await _userManager.GetRolesAsync(user);
+
+            if (ModelState.IsValid)
+            {
+                if (roles.Count > 0)
+                {
+                    foreach (var item in roles.ToList())
+                    {
+                        await _userManager.RemoveFromRoleAsync(user, item);
+                        return RedirectToAction("index", "Admin");
+                    }
+                }
+            }
+            return View(data);
         }
     }
 }

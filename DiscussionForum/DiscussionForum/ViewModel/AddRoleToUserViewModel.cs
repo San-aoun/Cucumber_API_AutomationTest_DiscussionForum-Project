@@ -2,7 +2,7 @@
 
 namespace DiscussionForum.ViewModel
 {
-    public class AddRoleToUserViewModelcs
+    public class AddRoleToUserViewModel
     {
         public string UserId { get; set; }
         public string Email { get; set; }

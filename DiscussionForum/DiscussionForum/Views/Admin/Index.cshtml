@@ -10,6 +10,7 @@
         <th>Fullname</th>
         <th>CurrentRole</th>
         <th></th>
+        <th></th>
     </tr>
 
     @if (Model == null)
@@ -30,6 +31,11 @@
                     <a asp-controller="Admin"
                     asp-action="AddRoleToUser"
                     asp-route-id="@item.UserId"> Add New Role</a>
+                </td>
+                <td>
+                    <a asp-controller="Admin"
+                    asp-action="RemoveRoleFromUser"
+                    asp-route-id="@item.UserId"> Remove Role</a>
                 </td>
             </tr>
         }
