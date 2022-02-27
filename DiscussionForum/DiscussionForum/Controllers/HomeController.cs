@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using DiscussionForum.Models;
+﻿using DiscussionForum.Models;
 using DiscussionForum.Models.db;
 using DiscussionForum.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+using System.Linq;
 
 namespace DiscussionForum.Controllers
 {
+    [Authorize(Roles = "Member,Admin")]
     public class HomeController : Controller
     {
         private readonly discussionForumDBContext _db;
@@ -26,7 +24,10 @@ namespace DiscussionForum.Controllers
             var viewmodel = new MainIndexViewModel()
             {
                 CategoriesLists = _db.Categories,
-                DiscussionsLists = _db.Discussions.OrderByDescending(r => r.RecordDate).Take(10).Include(c => c.Category).Where(i => i.IsShow == true)
+                DiscussionsLists = _db.Discussions
+                .OrderByDescending(r => r.RecordDate)
+                .Take(10).Include(c => c.Category)
+                .Where(i => i.IsShow == true)
             };
             return View(viewmodel);
         }

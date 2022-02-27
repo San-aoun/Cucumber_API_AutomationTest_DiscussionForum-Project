@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using DiscussionForum.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DiscussionForum.Controllers
 {
+    [Authorize(Roles = "Member,Admin")]
     public class WebboardController : Controller
     {
         private readonly discussionForumDBContext _db;
@@ -19,7 +21,10 @@ namespace DiscussionForum.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var ds = _db.Discussions.OrderByDescending(d => d.RecordDate).Include(c => c.Category).Where(u => u.IsShow == true);
+            var ds = _db.Discussions
+                .OrderByDescending(d => d.RecordDate)
+                .Include(c => c.Category)
+                .Where(u => u.IsShow == true);
 
             if (ds == null)
             {
@@ -45,6 +50,7 @@ namespace DiscussionForum.Controllers
                 data.ReplyCount = 0;
                 data.UserIp = HttpContext.Connection.RemoteIpAddress.ToString();
                 data.IsShow = true;
+                data.UserName = User.Identity.Name;
 
                 _db.Discussions.Add(data);
                 await _db.SaveChangesAsync();
@@ -160,6 +166,7 @@ namespace DiscussionForum.Controllers
                 data.ReplyDate = DateTime.Now;  
                 data.UserIp = HttpContext.Connection.RemoteIpAddress.ToString();
                 data.IsShow = true;
+                data.UserName = User.Identity.Name;
                 _db.Add(data);
 
                 var ds = await _db.Discussions.Where(d => d.Did == data.Did).FirstOrDefaultAsync();

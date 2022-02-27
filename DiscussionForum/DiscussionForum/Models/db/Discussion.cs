@@ -33,7 +33,7 @@ namespace DiscussionForum.Models.db
 
         public int? ReplyCount { get; set; }
 
-        [Required(ErrorMessage = "Please create name")]
+        //[Required(ErrorMessage = "Please create name")]
         [Display(Name = "User created")]
         public string UserName { get; set; }
 

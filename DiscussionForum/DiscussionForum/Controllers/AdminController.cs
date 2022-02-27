@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DiscussionForum.Controllers
 {
-    //[Authorize(Roles= "Admin")]
+    [Authorize(Roles= "Admin")]
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -163,6 +163,11 @@ namespace DiscussionForum.Controllers
                 }
             }
             return View(data);
+        }
+
+        public IActionResult Dashboard()
+        {
+            return View();
         }
     }
 }
