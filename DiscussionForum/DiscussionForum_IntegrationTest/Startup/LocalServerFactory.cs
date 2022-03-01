@@ -10,4 +10,35 @@ namespace DiscussionForum_IntegrationTest.Startup
     {
         private IHost _host;
     }
+    protected void CreateHostServer(IHostBuilder builder)
+    {
+        _host = builder.Build();
+        _host.Start();
+    }
+    protected override IHostBuilder CreateHostBuilder()
+    {
+        var builder = Host.CreateDefaultBuilder();
+    
+        builder.ConfigureWebHostDefaults(webBuilder =>
+                {
+                    var envCur = Environment.CurrentDirectory.Replace(
+                        "DiscussionForum\\bin\\Debug\\net5.0", "src\\DiscussionForum\\wwwroot");
+
+        webBuilder.UseStartup<TStartup>();
+                    webBuilder.UseWebRoot(envCur);
+                });
+
+        builder.UseEnvironment("Development");
+        return builder;
+    }
+
+    [ExcludeFromCodeCoverage]
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (disposing)
+        {
+            _host?.Dispose();
+        }
+    }
 }
