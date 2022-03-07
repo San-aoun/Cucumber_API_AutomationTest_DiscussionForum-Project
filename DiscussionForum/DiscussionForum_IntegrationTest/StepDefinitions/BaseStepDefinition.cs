@@ -1,18 +1,17 @@
 ﻿using DiscussionForum_IntegrationTest.Startup;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.Remote;
+using TechTalk.SpecFlow;
 using Xunit;
 
 namespace DiscussionForum_IntegrationTest.StepDefinitions
 {
-    public class BaseStepDefinition : IClassFixture<LocalServerFactory<Startup>>
+    public class BaseStepDefinition : IClassFixture<LocalServerFactory<DiscussionForum.Startup>>
     {
-        protected readonly LocalServerFactory<Startup> _localServerFactory;
+        private readonly LocalServerFactory<DiscussionForum.Startup> _localServerFactory;
+        private readonly FeatureContext _featureContext;
+        private static RemoteWebDriver _remoteWebDriver;
 
-        public BaseStepDefinition(FeatureContext featureContext, LocalServerFactory<Startup> localServerFactory)
+        public BaseStepDefinition(FeatureContext featureContext, LocalServerFactory<DiscussionForum.Startup> localServerFactory)
         {
             _localServerFactory = localServerFactory;
             _featureContext = featureContext;

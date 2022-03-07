@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DiscussionForum_IntegrationTest.Startup
 {
-    public class LocalServerFactory<TStartup> : WebApplicationFactory where TStartup : class
+    public class LocalServerFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {
         private IHost _host;
-    }
+    
     protected void CreateHostServer(IHostBuilder builder)
     {
         _host = builder.Build();
@@ -40,5 +44,6 @@ namespace DiscussionForum_IntegrationTest.Startup
         {
             _host?.Dispose();
         }
+    }
     }
 }
