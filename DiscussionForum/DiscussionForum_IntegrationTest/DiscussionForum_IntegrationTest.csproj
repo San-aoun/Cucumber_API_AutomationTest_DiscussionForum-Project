@@ -1,17 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace />
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="Features\**" />
+    <Compile Remove="StepDefinitions\Domains\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Features\**" />
+    <EmbeddedResource Remove="StepDefinitions\Domains\**" />
+    <None Remove="Data\**" />
+    <None Remove="Features\**" />
+    <None Remove="StepDefinitions\Domains\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.1.0" />
-    <PackageReference Include="SpecFlow" Version="3.9.52" />
+    <PackageReference Include="SpecFlow" Version="3.5.14" />
+    <PackageReference Include="SpecFlow.NetCore" Version="1.3.5" />
+    <PackageReference Include="SpecFlow.xUnit" Version="3.5.14" />
     <PackageReference Include="WebDriverManager" Version="2.12.3" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -25,13 +41,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
-    <Folder Include="Data\" />
-    <Folder Include="StepDefinitions\Domains\" />
+    <ProjectReference Include="..\DiscussionForum\DiscussionForum.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscussionForum\DiscussionForum.csproj" />
+    <None Update="Feature\login.feature">
+      <Generator></Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Feature\" />
   </ItemGroup>
 
 </Project>
