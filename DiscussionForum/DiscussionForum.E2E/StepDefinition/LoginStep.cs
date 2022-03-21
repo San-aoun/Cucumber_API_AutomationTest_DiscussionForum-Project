@@ -1,6 +1,4 @@
 ﻿using DiscussionForum.E2E.Domains;
-using OpenQA.Selenium;
-using System;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
@@ -15,7 +13,7 @@ namespace DiscussionForum.E2E.StartUp.StepDefinition
         [Given(@"navigate the registeration website")]
         public async Task GivenNavigateTheRegisterationWebsite()
         {
-            WebDriver.Navigate().GoToUrl("localhost:44360");
+            WebDriver.Navigate().GoToUrl("http://localhost:44360");
         }
 
     }

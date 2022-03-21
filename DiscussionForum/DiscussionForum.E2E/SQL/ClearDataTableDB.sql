@@ -1,9 +1,9 @@
 ﻿--------------Set variable with multiple values to Table ------
 
 declare @Email table(Value varchar(100))
-insert into @Email values ('qa_automation_api_01@draycir.dev')
-insert into @Email values ('qa_automation_api_02@draycir.dev')
-insert into @Email values ('qa_automation_api_03@draycir.dev')
+insert into @Email values ('qa_automation_api_01@test.com')
+insert into @Email values ('qa_automation_api_02@test.com')
+insert into @Email values ('qa_automation_api_03@test.com')
 
 declare @ReferenceId table(Value varchar(100))
 insert into @ReferenceId values ('TAR001')

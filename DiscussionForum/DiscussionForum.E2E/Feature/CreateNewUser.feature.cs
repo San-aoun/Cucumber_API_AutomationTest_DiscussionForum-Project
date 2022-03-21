@@ -121,28 +121,24 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Data",
-                            "Value"});
-                table1.AddRow(new string[] {
                             "Email",
-                            "Test@test.com"});
-                table1.AddRow(new string[] {
                             "Password",
-                            "TTT_ttt123"});
+                            "Confirm Password"});
                 table1.AddRow(new string[] {
-                            "Confirm Password",
+                            "Test@test.com",
+                            "TTT_ttt123",
                             "TTT_ttt123"});
 #line 11
  testRunner.When("user creates with new account with data details:", ((string)(null)), table1, "When ");
 #line hidden
-#line 16
+#line 14
  testRunner.Then("User can create data and go to page User detail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Email"});
                 table2.AddRow(new string[] {
                             "Test@test.com"});
-#line 17
+#line 15
  testRunner.And("database create with infomation", ((string)(null)), table2, "And ");
 #line hidden
             }
@@ -157,7 +153,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User create new account with invalid infoation should display error", null, tagsOfScenario, argumentsOfScenario);
-#line 24
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -179,6 +175,17 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Email",
+                            "Password",
+                            "Confirm Password"});
+                table3.AddRow(new string[] {
+                            "Test@test.com",
+                            "TTT_ttt123",
+                            "test"});
+#line 23
+ testRunner.When("user creates with new account with data details:", ((string)(null)), table3, "When ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,8 +1,5 @@
 using DiscussionForum.E2E.StartUp;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Remote;
-using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
