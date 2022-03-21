@@ -1,9 +1,8 @@
 ﻿Feature: Log In
 
 
-Background: 
-	Given navigate the registeration website
-
+####################################################
+# Validation of Functional
+####################################################
 Scenario: User login with admin user
-	When [action]
-	Then [outcome]
+	Given navigate the registeration website

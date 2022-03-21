@@ -2,22 +2,18 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiscussionForum.E2E.StartUp
 {
-    public class LocalServerFactory<TStartup> : WebApplicationFactory<IStartup> where TStartup : class
+    public class LocalServerFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {
         private IHost _host;
         public LocalServerFactory()
         {
             CreateHostServer(CreateHostBuilder());
         }
-        protected void CreateHostServer(IHostBuilder builder)
+        public void CreateHostServer(IHostBuilder builder)
         {
             _host = builder.Build();
             _host.Start();
@@ -28,13 +24,13 @@ namespace DiscussionForum.E2E.StartUp
 
             builder.ConfigureWebHostDefaults(webBuilder =>
             {
-                var envCur = Environment.CurrentDirectory.Replace(
-                    "DiscussionForum\\bin\\Debug\\net5.0", "src\\DiscussionForum\\wwwroot");
-
+                //var envCur = Environment.CurrentDirectory.Replace(
+                //    "DiscussionForum\\bin\\Debug\\net5.0", "DiscussionForum\\wwwroot\\images");
                 webBuilder.UseStartup<TStartup>();
-                webBuilder.UseWebRoot(envCur);
+                webBuilder.UseWebRoot(
+                    "E:\\DiscussionForum372022\\DiscussionForum\\DiscussionForum.E2E\\bin\\Debug\\net5.0\\wwwroot\\images");
             });
-
+            
             builder.UseEnvironment("Development");
             return builder;
         }
